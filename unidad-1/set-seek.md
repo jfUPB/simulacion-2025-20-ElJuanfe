@@ -6,7 +6,7 @@
 
 #### Piensa y describe en una sola frase y en tus propias palabras cómo la aleatoriedad influye en el arte generativo.
 
-La aleatoriedad es aquella que le da vida a cada generación de una generación, haciendo que no toda generación sea igual, pero dandola vide.
+La aleatoriedad es aquella que le da vida a cada generación de una generación, haciendo que no toda generación sea igual, pero dandole vida a través de las condiciones "ambientales".
 
 ### Actividad 02
 
@@ -17,4 +17,4 @@ La aleatoriedad es aquella que le da vida a cada generación de una generación,
 
 1. El papel de la aleatoriedad es aquel de hacer que cada "rama" tenga una identidad propia, la cual se pueda distinguir de las demás, dándole diferenciación, pero no disonancia. Todo esto hace que el arte no se vea tan plano ni insipido, le otorga la naturalidad que le resta artificialidad.
 
-2. En los proyectos que he desarrollado usé brochas que varían ligeramente de tonos, texturas para modelos 3D y también en cierta medida los "errores" (si así se le pueden llamar) humanos que cometo y le dan identidad a mis proyectos.
+2. En los proyectos que he desarrollado usé brochas que varían ligeramente de tonos, ruido gaussiano que pongo en los colores de mis dibujos y texturas de los mismos, esculpido para modelos 3D y también en cierta medida los "errores" (si así se le pueden llamar) humanos que cometo y le dan identidad a mis proyectos.
