@@ -92,3 +92,11 @@ Sucedió lo que predije anteriormente, donde se genera un circulo que cambia de 
 #### Ocurrió lo que esperabas? ¿Por qué crees que sí o por qué crees que no?
 Sí, debido a que los cambios no fueron muy complicados, además, son conceptos que ya conozco anteriormente
 
+### Actividad 04
+
+#### En tus propias palabras cuál es la diferencia entre una distribución uniforme y una no uniforme de números aleatorios.
+Una distribución uniforme es aquella que se encarga de distribuir a todos los valores posibles de forma en que todos "reciban" cantidad de valores similares, mientras qie una no uniforme se envarga de hacer que ciertos valore sean más probables de salir que otros, siendo parametrizados.
+
+#### Modifica el código de la caminata aleatoria para que utilice una distribución no uniforme, favoreciendo el movimiento hacia la derecha.
+
+
