@@ -29,7 +29,7 @@ let walker;
 let Red, Green, Blue;
 
 function setup() {
-  createCanvas(1920, );
+  createCanvas(1920, 1080);
   walker = new Walker();
   background(255);
   Red = 0;
@@ -95,8 +95,88 @@ Sí, debido a que los cambios no fueron muy complicados, además, son conceptos 
 ### Actividad 04
 
 #### En tus propias palabras cuál es la diferencia entre una distribución uniforme y una no uniforme de números aleatorios.
-Una distribución uniforme es aquella que se encarga de distribuir a todos los valores posibles de forma en que todos "reciban" cantidad de valores similares, mientras qie una no uniforme se envarga de hacer que ciertos valore sean más probables de salir que otros, siendo parametrizados.
+Una distribución uniforme es aquella que se encarga de distribuir a todos los valores posibles de forma en que todos reciban una distribución similar, mientras que una no uniforme se encarga de hacer que ciertos valore sean más probables de salir que otros, siendo parametrizados.
 
 #### Modifica el código de la caminata aleatoria para que utilice una distribución no uniforme, favoreciendo el movimiento hacia la derecha.
+Aquí modifiqué el código original, donde reemplacé la función random por RandomGaussian, donde deje las 4 posibilidades diferentes intactas, pero también modifiqué la desviación estándar por 2.
+``` js
+let walker;
 
+function setup() {
+  createCanvas(640, 240);
+  walker = new Walker();
+  background(255);
+}
+
+function draw() {
+  walker.step();
+  walker.show();
+}
+
+class Walker {
+  constructor() {
+    this.x = width/2;
+    this.y = height;
+  }
+
+  show() {
+    stroke(0);
+    point(this.x, this.y);
+  }
+
+  step() {
+    const choice = floor(randomGaussian(4,2));
+    if (choice == 0) {
+      this.x++;
+    } else if (choice == 1) {
+      this.x--;
+    } else if (choice == 2) {
+      this.y++;
+    } else {
+      this.y--;
+    }
+  }
+}
+```
+
+Además, también modifiqué el código para probar lo que pasaría si la desviación estándar fuese de cero. Observé que solo se generaba una línea recta, debido a que no puede desviarse.
+``` js
+let walker;
+
+function setup() {
+  createCanvas(640, 240);
+  walker = new Walker();
+  background(255);
+}
+
+function draw() {
+  walker.step();
+  walker.show();
+}
+
+class Walker {
+  constructor() {
+    this.x = width/2;
+    this.y = height;
+  }
+
+  show() {
+    stroke(0);
+    point(this.x, this.y);
+  }
+
+  step() {
+    const choice = floor(randomGaussian(4,0));
+    if (choice == 0) {
+      this.x++;
+    } else if (choice == 1) {
+      this.x--;
+    } else if (choice == 2) {
+      this.y++;
+    } else {
+      this.y--;
+    }
+  }
+}
+```
 
