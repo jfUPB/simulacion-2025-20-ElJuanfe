@@ -99,6 +99,9 @@ Una distribución uniforme es aquella que se encarga de distribuir a todos los v
 
 #### Modifica el código de la caminata aleatoria para que utilice una distribución no uniforme, favoreciendo el movimiento hacia la derecha.
 Aquí modifiqué el código original, donde reemplacé la función random por RandomGaussian, donde deje las 4 posibilidades diferentes intactas, pero también modifiqué la desviación estándar por 2.
+
+<img width="303" height="288" alt="imagen" src="https://github.com/user-attachments/assets/779fec16-5bbe-4045-8148-c536fdba443c" />
+
 ``` js
 let walker;
 
@@ -140,6 +143,9 @@ class Walker {
 ```
 
 Además, también modifiqué el código para probar lo que pasaría si la desviación estándar fuese de cero. Observé que solo se generaba una línea recta, debido a que no puede desviarse.
+
+<img width="319" height="284" alt="imagen" src="https://github.com/user-attachments/assets/1483a54f-3977-4b0c-b2ad-c08de431e889" />
+
 ``` js
 let walker;
 
@@ -179,4 +185,24 @@ class Walker {
   }
 }
 ```
+### Actividad 05
+
+``` js
+function setup() {
+  createCanvas(720, 520);
+  background(0);
+  noStroke();
+}
+
+function draw() {
+  let x = randomGaussian(width / 2, 60);
+  let y = randomGaussian(height / 2, 60);
+
+  fill(220, 208, 255, 80);
+  ellipse(x, y, 5, 5);
+}
+```
+[Estrella con Distribución Normal](https://editor.p5js.org/ElJuanfe/full/PwKNkEFHp)
+
+<img width="854" height="608" alt="imagen" src="https://github.com/user-attachments/assets/9b27b01e-5fd9-42f0-8276-6412389c00d1" />
 
