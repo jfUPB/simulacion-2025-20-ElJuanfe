@@ -206,3 +206,72 @@ function draw() {
 
 <img width="854" height="608" alt="imagen" src="https://github.com/user-attachments/assets/9b27b01e-5fd9-42f0-8276-6412389c00d1" />
 
+### Actividad 06
+
+#### Explica por qué usaste esta técnica y qué resultados esberabas obtener.
+Usé el vuelo de Levy porque quería hacer que un walker se comportase más como un animal, debido a artículos que leí, los cuales describen que es un patrón común en la búsqueda de recursos para fauna. Ahora, lo más lógico en mi opinión es que el walker si quiere simular a un animal debe pretender buscar recursos.
+
+#### Copia el código en tu bitácora.
+
+``` js
+let walker;
+
+function setup() {
+  createCanvas(640, 240);
+  walker = new Walker();
+  background(0);
+}
+
+function draw() {
+  walker.step();
+  walker.show();
+}
+
+class Walker {
+  constructor() {
+    this.x = width / 2;
+    this.y = height / 2;
+    this.prevX = this.x;
+    this.prevY = this.y;
+  }
+
+  show() {
+    stroke(255);
+    line(this.prevX, this.prevY, this.x, this.y);
+  }
+
+  step() {
+    this.prevX = this.x;
+    this.prevY = this.y;
+
+    let stepX = acceptreject();
+    let stepY = acceptreject();
+
+    stepX *= random([1, -1]);
+    stepY *= random([1, -1]);
+
+    this.x += stepX;
+    this.y += stepY;
+  }
+}
+
+function acceptreject() {
+  while (true) {
+    let r1 = random(10,7);
+    let r2 = random(10,7);
+    if (r2 < r1) {
+      return r1;
+    }
+  }
+}
+```
+
+#### Coloca en enlace a tu sketch en p5.js en tu bitácora.
+
+[Walker con Levy](https://editor.p5js.org/ElJuanfe/full/dei3wJEYS)
+
+#### Selecciona una captura de pantalla de tu sketch y colócala en tu bitácora.
+
+<img width="763" height="284" alt="imagen" src="https://github.com/user-attachments/assets/f98f381e-7e67-4bcf-8941-6701e6d0ce44" />
+
+
