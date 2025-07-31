@@ -167,7 +167,7 @@ Ambas hacen lo mismo. Solo cambia cómo se escriben.
 
 El producto cruz entre dos vectores:
 
-Devuelve un nuevo vector perpendicular al plano definido por los dos vectores originales. La magnitud del nuevo vector es igual al área del paralelogramo formado por los dos vectores.
+Devuelve un nuevo vector perpendicular al plano definido por los dos vectores originales. La magnitud del nuevo vector es igual al área del plano formado.
 
 <img width="526" height="530" alt="imagen" src="https://github.com/user-attachments/assets/28bae3a8-d775-408c-a09e-52191c0a9952" />
 
