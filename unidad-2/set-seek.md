@@ -141,13 +141,41 @@ De cierta forma un paso por referencia es como si se tratase de cambios dentro d
 
 ### Actividad 04
 
+#### ¿Para qué sirve el método mag()? Nota que hay otro método llamado magSq(). ¿Cuál es la diferencia entre ambos? ¿Cuál es más eficiente?
 
-¿Para qué sirve el método mag()? Nota que hay otro método llamado magSq(). ¿Cuál es la diferencia entre ambos? ¿Cuál es más eficiente?
-¿Para qué sirve el método normalize()?
-Te encuentras con un periodista en la calle y te pregunta ¿Para qué sirve el método dot()? ¿Qué le responderías en un frase?
- El método dot() tiene una versión estática y una de instancia. ¿Cuál es la diferencia entre ambas?
-Ahora el mismo periodista curioso de antes te pregunta si le puedes dar una intuición geométrica acerca del producto cruz. Entonces te pregunta ¿Cuál es la interpretación geométrica del producto cruz de dos vectores? Tu respuesta debe incluir qué pasa con la orientación y la magnitud del vector resultante.
-¿Para que te puede servir el método dist()?
-¿Para qué sirven los métodos normalize() y limit()?
+Calculates the magnitude (length) of the vector squared.
 
+* mag() calcula la magintud de un vector.
 
+* magSq() calcula la magnitud elevandola al cuadrado. (||v||² = x² + y², dandose de esta forma)
+
+Me atrevo a decir que no hay uno "más eficiente" que el otro, debido a que según lo queramos usar uno o otro pueden ser más convenientes. Ahora, lo que pasa es que cuando sacamos el resultado de suma de componentes de vector el teorema de pitágoras con su raíz puede hacer que tengamos resultados diferentes si usamos mag o magSq.
+
+#### ¿Para qué sirve el método normalize()?
+
+normalize() convierte un vector en un vector unitario, de magnitud 1 con su dirección original.
+
+#### Te encuentras con un periodista en la calle y te pregunta ¿Para qué sirve el método dot()? ¿Qué le responderías en un frase?
+
+Cálcula el producto punto entre dos vectores. En simples palabras: mide dos vectores, para saber si apuntan en la misma dirección, opuestas o perpendiculares.
+
+#### El método dot() tiene una versión estática y una de instancia. ¿Cuál es la diferencia entre ambas?
+
+Ambas hacen lo mismo. Solo cambia cómo se escriben.
+
+#### Ahora el mismo periodista curioso de antes te pregunta si le puedes dar una intuición geométrica acerca del producto cruz. Entonces te pregunta ¿Cuál es la interpretación geométrica del producto cruz de dos vectores? Tu respuesta debe incluir qué pasa con la orientación y la magnitud del vector resultante.
+
+El producto cruz entre dos vectores:
+
+Devuelve un nuevo vector perpendicular al plano definido por los dos vectores originales. La magnitud del nuevo vector es igual al área del paralelogramo formado por los dos vectores.
+
+<img width="526" height="530" alt="imagen" src="https://github.com/user-attachments/assets/28bae3a8-d775-408c-a09e-52191c0a9952" />
+
+#### ¿Para que te puede servir el método dist()?
+
+Para calcular la distancia entre dos vectores.
+
+#### ¿Para qué sirven los métodos normalize() y limit()?
+
+normalize()	Cambia la magnitud del vector a 1, sin cambiar su dirección.
+limit()	Limita la magnitud máxima del vector a un valor dado.
