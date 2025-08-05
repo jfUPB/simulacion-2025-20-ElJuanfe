@@ -242,12 +242,19 @@ En resumidas cuentas ambos funcionan parecido, tomando un valor A y valor B, los
 
 #### ¿Cómo se dibuja una flecha usando drawArrow()?
 
-La función necesita dos "componentes" base para funcionar, siendo vector de partida y vector dirección, siendo su distancia entre ellos lo que dara su magnitud, además, le agregaremos un componente que dicta su color.
+La función necesita dos "componentes" base para funcionar, siendo vector de partida y vector dirección, siendo su distancia entre ellos lo que dará su magnitud, además, le agregaremos un componente que dicta su color.
 
 ### Actividad 06
+
+#### Cuál es el concepto del marco motion 101 y cómo se interpreta geométricamente.
+
+
+
+#### ¿Cómo se aplica motion 101 en el ejemplo?
 
 
 
 ### Actividad 07
+
 
 
