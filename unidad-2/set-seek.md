@@ -179,3 +179,75 @@ Para calcular la distancia entre dos vectores.
 
 normalize()	Cambia la magnitud del vector a 1, sin cambiar su dirección.
 limit()	Limita la magnitud máxima del vector a un valor dado.
+
+### Actividad 05
+
+#### El código que genera el resultado que te pedí.
+
+``` js
+let x = 0;
+let dx = 0.01;
+
+function setup() {
+  createCanvas(500, 500);
+}
+
+function draw() {
+  background(200);
+
+  x += dx;
+  if (x > 1 || x < 0) {
+    dx *= -1;
+  }
+
+  let v0 = createVector(50, 50);
+  let v1 = createVector(300, 0);
+  let v2 = createVector(0, 300);
+  let v3 = p5.Vector.lerp(v1, v2, x);
+  let v4 = createVector(-300, 300);
+  let i = p5.Vector.add(v0, v1);
+  drawArrow(v0, v1, "red");
+  drawArrow(v0, v2, "blue");
+  drawArrow(v0, v3, "purple");
+  drawArrow(i, v4, "green");
+  drawArrow(v0, v3, lerpColor("red", "blue", x));
+}
+
+function drawArrow(base, vec, myColor) {
+  push();
+  stroke(myColor);
+  strokeWeight(3);
+  fill(myColor);
+  translate(base.x, base.y);
+  line(0, 0, vec.x, vec.y);
+  rotate(vec.heading());
+  let arrowSize = 7;
+  translate(vec.mag() - arrowSize, 0);
+  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
+  pop();
+}
+```
+
+#### ¿Cómo funciona lerp() y lerpColor().
+
+En resumidas cuentas ambos funcionan parecido, tomando un valor A y valor B, los cuales se interpolan por un diferencial dado, en el caso del ejercicio: "x". Basicamente, calcula números en un intervalo por determinados incrementos.
+
+* lerp()
+
+<img width="97" height="93" alt="imagen" src="https://github.com/user-attachments/assets/8da42499-e22f-41dc-962d-1cea7d1f726f" />
+
+* lerpColor()
+
+<img width="98" height="103" alt="imagen" src="https://github.com/user-attachments/assets/6b59fd05-e627-44ef-8654-b88f6c8cad11" />
+
+#### ¿Cómo se dibuja una flecha usando drawArrow()?
+
+La función necesita dos "componentes" base para funcionar, siendo vector de partida y vector dirección, siendo su distancia entre ellos lo que dara su magnitud, además, le agregaremos un componente que dicta su color.
+
+### Actividad 06
+
+
+
+### Actividad 07
+
+
