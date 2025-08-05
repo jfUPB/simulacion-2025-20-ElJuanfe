@@ -264,7 +264,7 @@ Para que la esfera se mueva se usa una suma continua de vectores (posición, vel
 
 * Aceleración constante.
 
-Como en motion 101, es una bola que se ve afectada por una caída, la cual va aumentando gradualmente su velocidad gracias a su aceleración.
+Como en motion 101, es una bola que se ve afectada por su aceleración en la dirección deseada, la cual va aumentando gradualmente su velocidad gracias a su aceleración.
 
 * Aceleración aleatoria.
 
@@ -273,3 +273,4 @@ Es una bola que se comporta de forma extraña, la cual en cierta medida parecies
 * Aceleración hacia el mouse.
 
 Ahora la bola parece como si se tratase de que el mouse sea un cuerpo celeste al igual que la bola, la cual hará lo posible por orbitar al mouse. Si la bola se aleja mucho empieza a "redirigirse" al mouse, teniendo así un efecto también de "persecución"
+
