@@ -248,13 +248,18 @@ La función necesita dos "componentes" base para funcionar, siendo vector de par
 
 #### Cuál es el concepto del marco motion 101 y cómo se interpreta geométricamente.
 
+El concepto consiste de sumas de vectores (posición, velocidad y aceleración), de forma que se aplica como dos fórmulas: 
+* x = x + v
+* v = v + a
 
+Un objeto se mueve por su velocidad, y esa velocidad aumenta con aceleración, además que se van actualizando constantemente los valores.
 
 #### ¿Cómo se aplica motion 101 en el ejemplo?
 
-
+Para que la esfera se mueva se usa una suma continua de vectores (posición, velocidad y aceleración). Cuando se ejecuta se mueve con una aceleración que hace que acumule velocidad hasta un límite de 10 y para evitar perderla tenemos un tipo de "contenedor" que establece valores de posición a cero si se va muy a la izquierda o abajo.
 
 ### Actividad 07
+
 
 
 
