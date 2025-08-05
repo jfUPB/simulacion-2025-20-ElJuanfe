@@ -260,6 +260,16 @@ Para que la esfera se mueva se usa una suma continua de vectores (posición, vel
 
 ### Actividad 07
 
+#### ¿Qué observaste cuando usas cada una de las aceleraciones propuestas?
 
+* Aceleración constante.
 
+Como en motion 101, es una bola que se ve afectada por una caída, la cual va aumentando gradualmente su velocidad gracias a su aceleración.
 
+* Aceleración aleatoria.
+
+Es una bola que se comporta de forma extraña, la cual en cierta medida pareciese un walker al inicio, pero posteriormente es como si adaptase un ruido de Perlin que hiciese atravesara con ligeras variaciones un lado a otro de la pantalla. En cierta medida es complicado de describir.
+
+* Aceleración hacia el mouse.
+
+Ahora la bola parece como si se tratase de que el mouse sea un cuerpo celeste al igual que la bola, la cual hará lo posible por orbitar al mouse. Si la bola se aleja mucho empieza a "redirigirse" al mouse, teniendo así un efecto también de "persecución"
