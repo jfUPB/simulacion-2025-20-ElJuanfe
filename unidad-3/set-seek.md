@@ -8,15 +8,21 @@
 
 * Fricción
 
+Usé fricción, que siempre va en la dirección opuesta al movimiento, donde tomé un coeficiente de restitución que pierde energía.
 
+<img width="1235" height="692" alt="imagen" src="https://github.com/user-attachments/assets/5da29dee-7fa1-4e2f-8cbf-01a403762cda" />
 
 * Resistencia del aire y de fluidos
 
+Ahora, con resitencia se toma la fórmula que siempre y cuando se cumpla si un cuerpo se contiene en el líquido.
 
+<img width="857" height="670" alt="imagen" src="https://github.com/user-attachments/assets/e64c367a-a9b0-41a0-8baf-defceadb75a0" />
 
 * Atracción gravitacional
 
+Usé la ley de gravitación universal, donde la fuerza que atrae ambos objetos es proporcional al producto de las dos masas, solo que en este caso una de elllas es fija.
 
+<img width="619" height="454" alt="imagen" src="https://github.com/user-attachments/assets/94a156b7-ca07-4625-961f-e59d49d004e6" />
 
 #### Conceptualmente cómo se relaciona la fuerza con la obra generativa.
 
@@ -61,3 +67,4 @@ Como tal quise hacer algo que representara la variabilidad en órbitas de cuerpo
 * Atracción gravitacional
 
 <img width="666" height="246" alt="imagen" src="https://github.com/user-attachments/assets/61ccb6ac-a2cd-40b8-911c-6bcb9f3bd14b" />
+
