@@ -99,7 +99,7 @@ class Pez {
     translate(this.pos.x, this.pos.y);
     rotate(this.vel.heading());
     noStroke();
-    fill(255);
+    fill(255,150,0);
     ellipse(0, 0, 20, 10); // cuerpo
 
     let tail = sin(this.oscAngle) * 5;
@@ -158,6 +158,7 @@ function mostrarModo() {
 
 ## Captura de pantalla representativa
 <img width="1687" height="809" alt="image" src="https://github.com/user-attachments/assets/c8872dcf-3ba4-461b-a49a-d9466d0b1aec" />
+
 
 
 
