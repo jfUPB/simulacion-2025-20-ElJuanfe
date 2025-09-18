@@ -27,7 +27,7 @@ La obra debe ser interactiva en tiempo real. Puedes usar teclado, mouse, música
 
 Incluye un enlace a tu código en el editor de p5.js.
 
-(Volcán)[[link](https://editor.p5js.org/ElJuanfe/sketches/SemqgAh-K)]
+[Volcán](https://editor.p5js.org/ElJuanfe/sketches/SemqgAh-K)
 
 Incluye el código fuente.
 
