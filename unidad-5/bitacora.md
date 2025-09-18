@@ -6,6 +6,10 @@
 
 Documenta el proceso de creación, incluyendo la idea inicial, bocetos, experimentación con el código y el resultado final.
 
+Prototipo anterior de código, el cual no funcionaba.
+
+<img width="1860" height="736" alt="image" src="https://github.com/user-attachments/assets/6b686416-e251-4997-a103-f6d72e5fad0e" />
+
 Es unidad incluye una novedad: DISEÑO. Debes intencionar tu obra. Esta vez te pediré que DISEÑES antes de generar código. Define un concepto, haz bocetos, define la interacción, etc. ¿Cuál es el concepto de tu obra? ¿Qué quieres comunicar con ella?
 
 Quiero poder tener un volcán dibujado por un trapecio, del cual saldrán del centro de su lado superior partículas como si fuesen lava y otras que parezcan humo y piedras. El usuario puede controlar con la barra espaciadora la erupción del volcán, si la presiona, lava saldrá brotando del volcán, si no, las partículas no se generan.
@@ -420,7 +424,29 @@ class Stone extends Particle {
 }
 ```
 
+Nota propuesta: 4.5, siento que aprendí en esta unidad los conceptos de cómo debe funcionar un sistema de partículas, sin embargo, como uno no aprende algo a la perfección de la noche a la mañana, siento que mi nota nos merecedora de un 5.
+
+1. Investigación y Experimentación (Evidencia en Actividad 2) - Siento que la cumplí a la perfección (4.5 - 5.0)
+2. Intención y Diseño (Proceso de Actividad 3) - Cumplí mi intensión de diseño, incluso ocurriendoseme cosas en mitad del desarrollo (4.5 - 5.0)
+3. Aplicación Técnica (Código de Actividad 3) - Hice buen uso de las herencias, separé en varias clases y el código en general está bien estructurado (4.5 - 5.0)
+4. Calidad de la Obra Final (Artefacto Entregado) - Siento que la calidad de mi obra es buena, hay un par de cosas a pulir, pero no de mucha importancia (4.5 - 5.0)
+
 Captura de pantallas de tu obra con las imágenes que más te gusten
 
 <img width="464" height="424" alt="image" src="https://github.com/user-attachments/assets/54a63d92-70e2-4984-b96a-2a3f51a4f185" />
 
+# Reflect: Consolidación y metacognición 🤔
+
+## Una vez termines esta unidad invierte en ti unos minutos para reflexionar sobre tu proceso de aprendizaje.
+
+Realiza un diagrama conceptual donde incluyas todos los conceptos que has aprendido en las unidades 1 a 5.
+
+<img width="752" height="670" alt="image" src="https://github.com/user-attachments/assets/bbece65f-2704-4f4a-b6ca-549930a829f7" />
+
+¿Qué has venido haciendo bien en tu proceso durante el curso que debas mantener en la próxima unidad?
+
+Supongo que reflexionar profundamente e indagar de cosas que hace la gente.
+
+¿Qué has venido haciendo mal en tu proceso durante el curso que debas cambiar en la próxima unidad?
+
+Haberme frustrado cuando las cosas no salían bien, pero solamente en esta unidad.
