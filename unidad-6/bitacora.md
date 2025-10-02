@@ -39,10 +39,86 @@ Craig presentó los boids (bird-oid objects) que contaban con separación, aline
 
 ### Actividad 03
 
+Explica brevemente la estructura de datos usada para el campo de flujo y cómo se generan sus vectores.
 
+El campo de flujo es una matriz bidimensional de vectores. Cada celda contiene un vector que representa la dirección que deben seguir los agentes en esa región del espacio. Estos vectores se generan usando perlin para obtener ángulos suaves.
+
+Describe con tus palabras cómo un agente utiliza el campo para calcular su fuerza de dirección.
+
+El campo es como un mapa lleno de flechitas invisibles. Cada flecha dice hacia dónde moverse.
+
+Lista los parámetros clave identificados (resolución, maxspeed, maxforce).
+
+* resolution: tamaño de cada celda de la grilla.
+
+* maxspeed: velocidad máxima del agente.
+
+* maxforce: fuerza máxima de dirección.
+
+Describe la modificación que realizaste al código y explica detalladamente el efecto que tuvo en el movimiento y comportamiento colectivo de los agentes. Incluye una captura de pantalla o GIF si ilustra bien el cambio. Muestra el fragmento de código modificado.
+
+https://github.com/user-attachments/assets/6e4138f9-203b-4f45-9767-81dd8305112f
+
+Basicamente, alteré xoff += 0.5 en flowfield, también en sketch cambié en setup esto:
+
+new Vehicle(random(width), random(height), random(0, 10), random(0, 10))
+)
+
+donde basicamente permití valores diferentes en dos de los randoms.
 
 ### Actividad 04
 
+Explica con tus palabras el objetivo y la lógica general de cálculo de cada una de las tres reglas de Flocking (Separación, Alineación, Cohesión).
 
+* Separación
+
+Evita el amontonamiento. cada boid mira a su alrededor en un radio pequeño. Si detecta vecinos muy cerca, calcula un vector que lo empuje en dirección contraria a ellos.
+
+* Alineación
+
+Mueve en la misma dirección a vecinos. Observa la velocidad de los vecinos y ajusta la suya para parecerse.
+
+* Cohesión
+
+Mantiene unido al grupo. Calcula el centro y genera un vector débil hacia ahí.
+
+Lista los parámetros clave identificados (radio de percepción, pesos de las reglas, maxspeed, maxforce).
+
+* Radio de percepción:
+
+desiredSeparation = 25, usado en separación.
+
+neighborDistance = 50, usado en alineación y cohesión.
+
+* Pesos de las reglas: esto sirve para determinar la importancia de las reglas
+
+sep.mult(1.5), separación tiene mayor peso, siendo predominante.
+
+ali.mult(1.0), peso de alineación.
+
+coh.mult(1.0), peso de cohesión.
+
+* maxspeed = 3: velocidad máxima del agente.
+
+* maxforce = 0.05: fuerza máxima de dirección.
+
+Describe la modificación que realizaste al código y explica detalladamente el efecto que tuvo en el comportamiento colectivo del enjambre (¿Se dispersan? ¿Forman grupos compactos? ¿se mueven caóticamente?). Incluye una captura de pantalla o GIF si ilustra bien el cambio. Muestra el fragmento de código modificado.
+
+https://github.com/user-attachments/assets/74491b7d-5673-4e29-85ee-59db5a4d929c
+
+Básicamente di prioridades así:
+
+sep.mult(1.0)
+ali.mult(2.0)
+coh.mult(3.0)
+
+y también cambié radios:
+
+desiredSeparation = 100
+
+neighborDistance = 1000
+
+tendían a veriar poco sus direcciones y formaban grupos estrechos.
 
 ### Actividad 05
+
