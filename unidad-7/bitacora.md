@@ -495,6 +495,7 @@ Tu nota propuesta.
 
 La defensa de esa nota para cada actividad.
 
-1. 5.0
-2. 5.0
-3. 5.0
+1. 5.0 Siento que fue una actividad relativamente simple y algo divertida porque me hizo pensar creativamente. Creo que cumplí bien lo especificado.
+2. 5.0 Cree un par de experimentos que me gustaron, no muy diferentes de los propuestos en Matter.js, además de que comprendo qué hace cada cosa.
+3. 5.0 Me gustó poder probar implementar las dos actividades anteriores juntas, fue interesante cumplir con un reto que me propuse que fue hacerlo con imágenes que se fraccionasen. Siento que hice todo lo propuesto como se debía.
+
