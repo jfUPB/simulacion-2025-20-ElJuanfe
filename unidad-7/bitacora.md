@@ -309,15 +309,16 @@ https://github.com/user-attachments/assets/6c3f69b2-735f-4f54-ab62-b4c11a50d0bc
 
 Proporciona tu explicación clara y concisa de los conceptos clave (Engine, World, Bodies, Constraint, MouseConstraint).
 
-
+* Engine: motor principal, calcula las fuerzas, colisiones y movimientos de todos los cuerpos.
+* World: contenedor que guarda todos los cuerpos.
+* Bodies: colección de formas físicas básicas que puedes crear.
+* Constraint: es una conexión entre dos puntos, pudiendo ser cuerpos.
+* MouseConstraint: facilita interactuar con los cuerpos usando el mouse.
 
 Menciona brevemente cualquier dificultad encontrada al configurar o usar Matter.js inicialmente.
 
-
-
-
-<img width="729" height="417" alt="image" src="https://github.com/user-attachments/assets/526c1c0d-5adc-49a3-a13b-14dc0c6c43cd" />
-
+Inicialmente me salté la parte del vídeo donde explican añadir en el index esto: <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>, pero posteriormente lo ví despues de intentar multiples veces fallidas ajacutar mi códdigo.
 
 ### Actividad 03
+
 
