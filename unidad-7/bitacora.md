@@ -317,8 +317,184 @@ Proporciona tu explicación clara y concisa de los conceptos clave (Engine, Worl
 
 Menciona brevemente cualquier dificultad encontrada al configurar o usar Matter.js inicialmente.
 
-Inicialmente me salté la parte del vídeo donde explican añadir en el index esto: <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>, pero posteriormente lo ví despues de intentar multiples veces fallidas ajacutar mi códdigo.
+Inicialmente me salté la parte del vídeo donde explican añadir en el index esto: 
+``` js
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+```
+pero posteriormente lo ví despues de intentar multiples veces fallidas ajacutar mi códdigo.
 
 ### Actividad 03
 
+Indica claramente la palabra elegida.
 
+Golpe
+
+Explica tu idea conceptual: ¿Cómo la animación física representa el significado de la palabra?
+
+Simplemente muestra una colisión con dicha palabra, la cual pareciera cuando golpean con una bola de demolición a una pared y salen volando escombros.
+
+Describe brevemente los aspectos técnicos clave de tu implementación: ¿Cómo formaste las letras con Matter.js? ¿Qué propiedades físicas fueron importantes? ¿Usaste restricciones?
+
+La palabra se formó mediante una imagen png, la cual toma los valores no transparentes de los pixeles y los convierte a cuadros de colores individuales.
+
+* isStatic mantiene los cuerpos inmóviles al inicio.
+* restitution controla qué tanto rebotan los cuerpos al colisionar.
+* frictionAir es resistencia del aire. con esta fricción evitamos que los cuadros vuelen descontroladamente.
+* friction adicionalemnte da fricción entre los cuerpos
+* applyForce sirve para que empujemos los bloques con el cursor
+
+No usé constraints.
+
+Incluye el código completo de tu sketch final.
+
+``` js
+// Requiere matter.js
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+let Engine = Matter.Engine,
+    World = Matter.World,
+    Bodies = Matter.Bodies,
+    Body = Matter.Body;
+
+let engine, world;
+let boxes = [];
+let img;
+
+function preload() {
+  // 🔹 Carga tu imagen — puede ser una palabra o figura
+  img = loadImage('golpe.png');
+}
+
+function setup() {
+  createCanvas(800, 400);
+  pixelDensity(1);
+
+  engine = Engine.create();
+  world = engine.world;
+
+  // Sin gravedad, estilo "espacio"
+  engine.world.gravity.y = 0;
+  engine.world.gravity.x = 0;
+
+  createBoxesFromImage(img);
+}
+
+function createBoxesFromImage(img) {
+  img.resize(600, 0); // mantiene un tamaño razonable
+  img.loadPixels();
+
+  let step = 4; // mayor resolución
+
+  for (let y = 0; y < img.height; y += step) {
+    for (let x = 0; x < img.width; x += step) {
+      let index = (x + y * img.width) * 4;
+      let r = img.pixels[index + 0];
+      let g = img.pixels[index + 1];
+      let b = img.pixels[index + 2];
+      let a = img.pixels[index + 3];
+
+      // Solo crea cuerpos si el pixel es visible
+      if (a > 100) {
+        let bx = x + width / 2 - img.width / 2;
+        let by = y + height / 2 - img.height / 2;
+        let bColor = color(r, g, b);
+
+        // 🔹 Los bloques comienzan estáticos (sin moverse)
+        let body = Bodies.rectangle(bx, by, step, step, {
+          isStatic: true,      // inicialmente fijos
+          restitution: 0.001,  // casi sin rebote
+          frictionAir: 0.2,
+          friction: 0.8,
+        });
+
+        body.customColor = bColor;
+        boxes.push(body);
+        World.add(world, body);
+      }
+    }
+  }
+}
+
+function draw() {
+  background(10, 15, 25);
+  Engine.update(engine);
+
+  noStroke();
+  for (let b of boxes) {
+    push();
+    translate(b.position.x, b.position.y);
+    rotate(b.angle);
+    fill(b.customColor);
+    rectMode(CENTER);
+    rect(0, 0, 4, 4, 1);
+    pop();
+  }
+
+  if (mouseIsPressed) {
+    applyGentleForce(mouseX, mouseY, 100, 0.001);
+  }
+
+  gentleDrift();
+
+  fill(150);
+  textSize(14);
+  textAlign(LEFT, BOTTOM);
+  text("Haz clic o mueve el mouse para romper la imagen", 10, height - 10);
+}
+
+function applyGentleForce(x, y, radius, strength) {
+  for (let b of boxes) {
+    let dx = b.position.x - x;
+    let dy = b.position.y - y;
+    let distSq = dx * dx + dy * dy;
+    if (distSq < radius * radius) {
+      let force = createVector(dx, dy).normalize().mult(strength);
+      Body.applyForce(b, b.position, { x: force.x, y: force.y });
+    }
+  }
+}
+
+function gentleDrift() {
+  for (let b of boxes) {
+    if (random() < 0.02) {
+      let fx = (random() - 0.5) * 0.0001;
+      let fy = (random() - 0.5) * 0.0001;
+      Body.applyForce(b, b.position, { x: fx, y: fy });
+    }
+  }
+}
+
+// 🔹 Cuando haces clic, todos los bloques se "liberan"
+function mousePressed() {
+  for (let b of boxes) {
+    Body.setStatic(b, false);
+  }
+}
+
+// 🔹 También se libera si arrastras el mouse
+function mouseDragged() {
+  for (let b of boxes) {
+    Body.setStatic(b, false);
+  }
+}
+```
+
+[Link en p5.js](https://editor.p5js.org/ElJuanfe/sketches/DTKreUYd7)
+
+Inserta una captura de pantalla estática Y un enlace a un GIF animado (¡Esencial!) que muestre tu tipografía semántica animada en acción.
+
+<img width="794" height="392" alt="image" src="https://github.com/user-attachments/assets/9cba0ee3-1fbb-46f2-ad7b-524c448983fb" />
+
+![ezgif-7d363fdf9d3fed](https://github.com/user-attachments/assets/0cf49837-bb12-4ae6-bb96-3b148988cba5)
+
+### Autoevaluación
+
+Tu nota propuesta.
+
+5.0
+
+La defensa de esa nota para cada actividad.
+
+1. 5.0
+2. 5.0
+3. 5.0
