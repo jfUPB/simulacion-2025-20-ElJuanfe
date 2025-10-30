@@ -954,3 +954,12 @@ Un enlace a tu sketch en el editor de p5.js.
 
 Capturas de pantalla mostrando tu pieza en acción.
 
+autoevaluacion
+1.) 5
+2.) 5
+3.) 5
+ 
+Total
+5
+ 
+
